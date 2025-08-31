@@ -22,10 +22,9 @@
     </header>
     <main class="main">
       <section class="section">
-        <div class="section__title-wrapper">
-          <h3 class="section-title">Фритрек и нулевой спринт:</h3>
-          <h3 class="section-title">Подготовка к работе</h3>
-        </div>
+        <h3 class="section-title">
+          Фритрек и нулевой спринт: Подготовка к работе
+        </h3>
         <div class="section__image-wrapper">
           <span class="label">&lt;/HTML&gt;</span>
           <img class="section__image" src="./images/bus.png" />
@@ -148,10 +147,7 @@
           </p>
           <div class="card__buttons">
             <button class="button card__icon-button">
-              <div class="section__image-wrapper">
-                <span class="label">&lt;/HTML&gt;</span>
-                <img class="section__image" src="./images/bus.png" />
-              </div>
+              <img class="like-icon" src="./svg/like.svg" />
             </button>
             <button class="button card__like-button">
               <span class="button__text">Like</span>
@@ -240,7 +236,11 @@
         </div>
       </section>
       <footer class="footer">
-        <button class="button save-button">
+        <button
+          class="button save-button"
+          type="button"
+          onclick="window['dialog-id'].showModal()"
+        >
           <svg class="floppy-icon">
             <use href="./svg/floppy.svg#floppy"></use>
           </svg>
@@ -249,14 +249,18 @@
       </footer>
     </main>
     <script src="./scripts/like.js"></script>
-    <dialog open>
+    <dialog id="dialog-id">
       <div class="dialog__wrapper">
         <svg class="floppy-icon">
           <use href="./svg/floppy.svg#floppy"></use>
         </svg>
         <span class="button__text">Вставьте дискету, чтобы продолжить</span>
       </div>
-      <button class="button dialog__button">
+      <button
+        class="button dialog__button"
+        type="button"
+        onclick="window['dialog-id'].close()"
+      >
         <span class="button__text">ок</span>
       </button>
     </dialog>
