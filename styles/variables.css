@@ -5,6 +5,9 @@
   --main-weight: 410;
   --title-weight: 715;
   --stroke: 1px #fff;
+  --accent-color: #000;
+  --contour-color: #000;
+  --animation-fill-color: #FF0000;
   --background-gradient: repeating-linear-gradient(
       to right,
       #d3d3d3 0px,
