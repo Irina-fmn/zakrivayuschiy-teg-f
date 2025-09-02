@@ -1,7 +1,7 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
 :root {
-  --main-font: "Inter-Variable";
-  --accent-font: "PressStart2P";
+  --main-font: "Inter-Variable", sans-serif;
+  --accent-font: "PressStart2P", fantasy;
   --main-weight: 410;
   --title-weight: 715;
   --stroke-color: #fff;
@@ -10,6 +10,7 @@
   --animation-fill-color: #ff0000;
   --bg-color: #fff;
   --content-width: clamp(23.438rem, 16.285rem + 30.516vw, 43.75rem);
+  --border: 2px solid var(--accent-color);
   --background-gradient: repeating-linear-gradient(
       to right,
       #d3d3d3 0px,

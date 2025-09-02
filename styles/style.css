@@ -16,7 +16,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: var(--main-font), sans-serif;
+  font-family: var(--main-font);
   font-variation-settings: "wght" var(--main-weight);
   background-image: var(--background-gradient);
   background-size: cover;
@@ -26,7 +26,7 @@
 .header {
   padding: clamp(7.625rem, 7.449rem + 0.751vw, 8.125rem) 0;
   margin: 100px 0;
-  border: 2px solid var(--accent-color);
+  border: var(--border);
   background-color: var(--bg-color);
   width: var(--content-width);
   display: flex;
@@ -41,12 +41,12 @@
 }
 
 .header__title {
-  font-family: var(--accent-font), sans-serif;
+  font-family: var(--accent-font);
   font-size: clamp(3.063rem, 2.71rem + 1.502vw, 4.063rem);
 }
 
 .header__subtitle {
-  font-family: var(--accent-font), sans-serif;
+  font-family: var(--accent-font);
   font-size: clamp(0.875rem, 0.677rem + 0.845vw, 1.438rem);
   text-transform: uppercase;
 }
@@ -59,7 +59,7 @@
 }
 
 .section {
-  border: 2px solid var(--accent-color);
+  border: var(--border);
   background-color: var(--bg-color);
 }
 
@@ -72,6 +72,7 @@
 .section__image-wrapper {
   position: relative;
   overflow: hidden;
+  outline: var(--border);
 }
 
 .label {
@@ -79,7 +80,7 @@
   top: 25px;
   right: 25px;
   mix-blend-mode: hard-light;
-  font-family: var(--accent-font), sans-serif;
+  font-family: var(--accent-font);
   font-size: 14px;
   opacity: 50%;
   text-shadow: -1px -1px 0 var(--stroke-color), 1px -1px 0 var(--stroke-color),
@@ -103,8 +104,8 @@
   display: flex;
   width: 100%;
   height: 100%;
-  background-size: cover;
-  background-position: center;
+  object-fit: cover;
+  object-position: center;
 }
 
 .card {
@@ -126,15 +127,38 @@
 
 .button {
   background-color: var(--bg-color);
-  border: 2px solid var(--accent-color);
+  border: var(--border);
   cursor: pointer;
   outline: none;
   overflow: hidden;
   position: relative;
   line-height: 90%;
+  transition: box-shadow 0.3s ease;
+}
+
+.button:focus {
+  box-shadow: 2px 2px 0 var(--accent-color);
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--accent-color);
+  transform: translateX(-100%);
+  transition: transform 0.5s ease-in-out;
+  z-index: 0;
+}
+
+.button:hover::before {
+  transform: translateX(0);
 }
 
 .card__icon-button {
+  background-color: var(--bg-color);
   display: flex;
   transition: outline-width 0.3s ease;
   outline-offset: -1px;
@@ -158,7 +182,6 @@
 .card__like-button {
   width: 130px;
   height: 38px;
-  transition: box-shadow 0.3s ease;
 }
 
 .button__text {
@@ -170,7 +193,7 @@
   mix-blend-mode: difference;
 }
 
-.footer {
+.actions {
   display: flex;
   justify-content: center;
   padding: 50px 34px 100px 34px;
@@ -184,13 +207,15 @@
   flex-wrap: wrap;
   gap: 8px;
   padding: 17px 20px;
-  transition: box-shadow 0.3s ease;
   min-width: 310px;
 }
 
 .floppy-icon {
-  width: 28px;
-  height: 28px;
+  width: clamp(
+    21px,
+    calc(28px + (21 - 28) * ((100vw - 375px) / (1440 - 375))),
+    28px
+  );
   position: relative;
   z-index: 1;
   fill: var(--bg-color);
@@ -202,7 +227,7 @@ dialog[open] {
   display: flex;
   flex-direction: column;
   gap: 30px;
-  padding: 30px 40px;
+  padding: 30px;
   position: fixed;
   inset: 0;
 }
@@ -219,9 +244,19 @@ dialog[open] {
   gap: 20px;
 }
 
+.dialog__text {
+  font-family: var(--accent-font);
+  font-size: 14px;
+  text-transform: uppercase;
+  line-height: 150%;
+}
+
 .dialog__button {
   padding: 12.5px 116.5px;
-  transition: box-shadow 0.3s ease;
+}
+
+.dialog__button .button__text {
+  text-transform: uppercase;
 }
 
 dialog[open]::backdrop {
@@ -254,31 +289,4 @@ dialog[open]::backdrop {
 
 .multiple-image {
   filter: sepia(60%) saturate(150%) brightness(1.1) blur(2px);
-}
-
-.card__like-button:focus,
-.save-button:focus,
-.dialog__button:focus {
-  box-shadow: 2px 2px 0 var(--accent-color);
-}
-
-.card__like-button::before,
-.save-button::before,
-.dialog__button::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: var(--accent-color);
-  transform: translateX(-100%);
-  transition: transform 0.5s ease-in-out;
-  z-index: 0;
-}
-
-.card__like-button:hover::before,
-.save-button:hover::before,
-.dialog__button:hover::before {
-  transform: translateX(0);
 }
