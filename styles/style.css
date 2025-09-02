@@ -23,16 +23,13 @@
   background-attachment: fixed;
 }
 
-.content {
-  width: var(--content-width);
-}
-
 .header {
   padding: clamp(7.625rem, 7.449rem + 0.751vw, 8.125rem)
     clamp(1rem, -1.344rem + 10vw, 7.656rem);
   margin: 100px 0;
   border: 2px solid var(--accent-color);
   background-color: var(--bg-color);
+  width: var(--content-width);
 }
 
 .header__title-wrapper {
@@ -56,6 +53,7 @@
   display: flex;
   flex-direction: column;
   gap: 50px;
+  width: var(--content-width);
 }
 
 .section {
@@ -142,21 +140,12 @@
   padding: 0;
 }
 
-.card__icon-button:focus {
-  outline: none;
-}
-
 .card__icon-button:focus-visible {
   outline-width: 2px;
 }
 
-.like-icon {
-  transform-origin: center;
-}
-
 .heart {
   transform-origin: center;
-  transform-box: fill-box;
 }
 
 .sparks {
@@ -182,6 +171,7 @@
   display: flex;
   justify-content: center;
   padding: 50px 34px 100px 34px;
+  width: var(--content-width);
 }
 
 .save-button {
