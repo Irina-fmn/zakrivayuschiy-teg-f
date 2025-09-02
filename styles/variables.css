@@ -4,10 +4,12 @@
   --accent-font: "PressStart2P";
   --main-weight: 410;
   --title-weight: 715;
-  --stroke: 1px #fff;
+  --stroke-color: #fff;
   --accent-color: #000;
   --contour-color: #000;
-  --animation-fill-color: #FF0000;
+  --animation-fill-color: #ff0000;
+  --bg-color: #fff;
+  --content-width: clamp(23.438rem, 16.285rem + 30.516vw, 43.75rem);
   --background-gradient: repeating-linear-gradient(
       to right,
       #d3d3d3 0px,
@@ -23,5 +25,4 @@
       transparent 4px
     ),
     linear-gradient(to bottom, #e7e7e7 0%, #e7e7e7 0.01%, #1a1a1a 100%);
-    --width: clamp(23.438rem, 16.285rem + 30.516vw, 43.75rem);
 }

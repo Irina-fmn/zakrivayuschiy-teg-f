@@ -67,18 +67,12 @@
   animation: sparks 0.3s ease-in 0.3s;
 }
 
-
-.like-icon.is-liked .heart { transform: scale(1.25); }
 @keyframes pulse {
   0% {
     transform: scale(1);
   }
-
-  50% {
-    transform: scale(1.25);
-  }
   100% {
-    transform: scale(1);
+    transform: scale(1.25);
   }
 }
 
